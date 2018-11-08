@@ -8,6 +8,9 @@ static void sighandler(int signo){
     printf("Program exited due to SIGINT\n");
     exit(0);
   }
+  if (signo == SIGUSR1){
+    printf("Parent PID: %d\n", getppid());
+  }
 }
 
 int main(){
